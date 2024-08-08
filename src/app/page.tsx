@@ -384,7 +384,9 @@ export default function Home() {
             {products && products.length === 0 ? (
               <EmptyProd />
             ) : products ? (
-              products.map((product) => <Product product={product.metadata!} />)
+              products.map((product, i) => (
+                <Product product={product.metadata!} key={i} />
+              ))
             ) : (
               new Array(12)
                 .fill(null)
